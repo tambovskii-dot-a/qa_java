@@ -16,22 +16,22 @@ import static org.mockito.Mockito.*;
 public class CatTest {
 
     @Mock
-    Cat cat;
-    Feline feline;
+    Feline feline = new Feline();
+
+
 
     @Test
-    public void CatGetSoundTest() {
-        cat = new Cat(feline);
+    public void catGetSoundTest() {
+        Cat cat = new Cat(feline);
         assertEquals("Мяу", cat.getSound());
     }
 
     @Test
-    public void CatGetFoodTest() throws Exception {
-        Feline feline = Mockito.spy(new Feline());
-        cat = new Cat(feline);
+    public void catGetFoodTest() throws Exception {
+        Cat cat = new Cat(feline);
         List<String> expectedResult = Arrays.asList("Животные", "Птицы", "Рыба");
         when(feline.eatMeat()).thenReturn(expectedResult);
         assertEquals(expectedResult, cat.getFood());
-        verify(feline, times(2)).eatMeat();
+        verify(feline).eatMeat();
     }
 }
