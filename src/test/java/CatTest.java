@@ -16,7 +16,7 @@ import static org.mockito.Mockito.*;
 public class CatTest {
 
     @Mock
-    Feline feline = new Feline();
+    Feline feline;
 
 
 

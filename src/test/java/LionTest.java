@@ -15,11 +15,11 @@ import static org.mockito.Mockito.*;
 public class LionTest {
     private final String EXCEPTION_MESSAGE_TEXT = "Используйте допустимые значения пола животного - самец или самка";
     @Mock
-    Feline feline = new Feline();
+    Feline feline;
 
 
     @Test
-    public void LionGetKittensTest() throws Exception {
+    public void lionGetKittensTest() throws Exception {
         Lion lion = new Lion("Самец", feline);
         when(feline.getKittens()).thenReturn(1);
         assertEquals(1, lion.getKittens());
@@ -27,7 +27,7 @@ public class LionTest {
     }
 
     @Test
-    public void LionGetFoodTest() throws Exception {
+    public void lionGetFoodTest() throws Exception {
         Lion lion = new Lion("Самец", feline);
         List<String> expectedResult = Arrays.asList("Животные", "Птицы", "Рыба");
         when(feline.getFood("Хищник")).thenReturn(expectedResult);

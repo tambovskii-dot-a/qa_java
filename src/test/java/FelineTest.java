@@ -12,7 +12,7 @@ public class FelineTest {
 
 
     @Test
-    public void FelineEatMeatTest() throws Exception {
+    public void felineEatMeatTest() throws Exception {
         feline = new Feline();
         List<String> expectedResult = Arrays.asList("Животные", "Птицы", "Рыба");
         List<String> actualResult = feline.eatMeat();
@@ -21,13 +21,13 @@ public class FelineTest {
     }
 
     @Test
-    public void FelineGetFamilyTest() {
+    public void felineGetFamilyTest() {
         feline = new Feline();
         assertEquals("Кошачьи", feline.getFamily());
     }
 
     @Test
-    public void FelineDefaultGetKittensTest() {
+    public void felineDefaultGetKittensTest() {
         feline = new Feline();
         assertEquals(1, feline.getKittens());
     }
